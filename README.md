@@ -10,3 +10,6 @@ rosrun image_view image_view image:=/image<br>
 rosrun zbar_ros barcode_reader_node<br>
 rqt_graph<br>
 rostopic echo /barcode<br>
+
+Camera Calibration:<br>
+rosrun camera_calibration cameracalibrator.py --size 8*6 --suqare 0.108 image:=/image
