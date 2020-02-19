@@ -5,6 +5,7 @@ Go to catkin_ws folder:
 ----
 souce devel/setup.bash<br>
 roscore<br>
+roslaunch openni_launch openni.launch
 rosrun cv_camera cv_camera_node /cv_camerea/image_raw:=image<br>
 rosrun image_view image_view image:=/image<br>
 rosrun zbar_ros barcode_reader_node<br>
