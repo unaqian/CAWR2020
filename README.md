@@ -8,32 +8,32 @@ souce devel/setup.bash<br>
 roscore<br>
 
 2. CAMERA SETUP
-For Openni Camera (Asus):<br>
+-For Openni Camera (Asus):<br>
 roslaunch openni_launch openni.launch<br>
-For USB WEBCAM (Logitech):<br>
+-For USB WEBCAM (Logitech):<br>
 rosrun cv_camera cv_camera_node /cv_camerea/image_raw:=image <br>
-FOR ZED2 Camera:<br>
+-FOR ZED2 Camera:<br>
 roslaunch zed_wrapped zed2.launch
 
-3. VIEW CAMERA OUTPUT
-For USB WEBCAM (Logitech):<br>
+3. VIEW CAMERA OUTPUT (image_pipeline)<br>
+-For USB WEBCAM (Logitech):<br>
 rosrun image_view image_view image:=/image<br>
-FOR ASUS Camera:<br>
+-FOR ASUS Camera:<br>
 rosrun image_view image_view image:=/camera/rgb/image_color<br>
-FOR ZED2 Camera:<br>
+-FOR ZED2 Camera:<br>
 rosrun image_view image_view image:=/zed2/zed_node/rgb_raw/image_raw_color
 
-4. BARCODE DETECTOR<br>
-rosrun zbar_ros barcode_reader_node image:=/camera/rgb/image_color<br>
+4. BARCODE DETECTOR (zbar_ros)<br>
+rosrun zbar_ros barcode_reader_node image:=/zed2/zed_node/rgb_raw/image_raw_color<br>
 rostopic echo /barcode<br>
 rqt_graph<br>
 
-5. TEXT DETECTOR (using cob_read_text)
-roslaunch cob_read_text read_text_from_camera.launch (still require adjusting the output)
+5. TEXT DETECTOR (cob_read_text & cob_perception_data)<br>
+roslaunch cob_read_text read_text_from_camera.launch (still require adjusting the output)<br>
 
 EXTRA...
 Camera Calibration:<br>
-rosrun camera_calibration cameracalibrator.py --size 8*6 --suqare 0.108 image:=/image
+rosrun camera_calibration cameracalibrator.py --size 8*6 --suqare 0.108 image:=/image 
 <br>
 
 When you try to install a new ROS package:<br>
