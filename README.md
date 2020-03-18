@@ -13,7 +13,7 @@ roslaunch openni_launch openni.launch<br>
 -For USB WEBCAM (Logitech):<br>
 rosrun cv_camera cv_camera_node /cv_camerea/image_raw:=image <br>
 -FOR ZED2 Camera:<br>
-roslaunch zed_wrapped zed2.launch
+roslaunch zed_wrapper zed2.launch
 
 3. VIEW CAMERA OUTPUT (image_pipeline)<br>
 -For USB WEBCAM (Logitech):<br>
